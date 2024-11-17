@@ -8,9 +8,9 @@ const AddProduct = () => {
     description: "",
     price: "",
     category: "",
-    stockQuantity: "",
+    quantity: "",
     releaseDate: "",
-    productAvailable: false,
+    available: false,
   });
   const [image, setImage] = useState(null);
 
@@ -88,7 +88,7 @@ const AddProduct = () => {
             type="text"
             className="form-control"
             placeholder="Add product description"
-            value={product.description}
+            value={product.des}
             name="description"
             onChange={handleInputChange}
             id="description"
@@ -139,7 +139,7 @@ const AddProduct = () => {
             className="form-control"
             placeholder="Stock Remaining"
             onChange={handleInputChange}
-            value={product.stockQuantity}
+            value={product.quantity}
             name="stockQuantity"
             // value={`${stockAlert}/${stockQuantity}`}
             id="stockQuantity"
@@ -177,9 +177,9 @@ const AddProduct = () => {
               type="checkbox"
               name="productAvailable"
               id="gridCheck"
-              checked={product.productAvailable}
+              checked={product.available}
               onChange={(e) =>
-                setProduct({ ...product, productAvailable: e.target.checked })
+                setProduct({ ...product, available: e.target.checked })
               }
             />
             <label className="form-check-label">Product Available</label>
